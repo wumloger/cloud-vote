@@ -6,17 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="vote-core" />
         <module name="vote-user" />
         <module name="vote-common" />
-        <module name="vote-security" />
+        <module name="vote-candidate" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloud-vote" options="-parameters" />
+      <module name="vote-candidate" options="-parameters" />
       <module name="vote-common" options="-parameters" />
-      <module name="vote-security" options="-parameters" />
+      <module name="vote-core" options="-parameters" />
       <module name="vote-user" options="-parameters" />
     </option>
   </component>
