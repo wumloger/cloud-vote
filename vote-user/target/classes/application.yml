@@ -1,0 +1,17 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: security-server
+  datasource:
+    url: jdbc:mysql://47.113.151.162:3306/vote_center?useSSL=FALSE&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+logging:
+  level:
+    com.example.bdatabaserole.mapper: debug  # 打印sql语句
