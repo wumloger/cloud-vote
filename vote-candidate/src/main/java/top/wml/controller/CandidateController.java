@@ -1,6 +1,7 @@
 package top.wml.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 import top.wml.annotation.TokenRequired;
@@ -20,6 +21,8 @@ public class CandidateController {
     private CandidateService candidateService;
 
     @GetMapping("/list")
+    @Operation(summary = "获取所有候选人")
+    @TokenRequired
     public CommonResp getCandidates() {
         List<Candidate> list = candidateService.list();
         if(list.size() == 0 || list == null){
@@ -30,6 +33,7 @@ public class CandidateController {
 
     @PostMapping("/get")
     @TokenRequired
+    @Operation(summary = "获取单个候选人")
     public CommonResp getCandidate(@RequestParam("id") Integer id) {
         Candidate byId = candidateService.getById(id);
         return CommonResp.success(byId);
@@ -38,6 +42,7 @@ public class CandidateController {
 
     @PostMapping("/add")
     @TokenRequired
+    @Operation(summary = "添加候选人")
     public CommonResp addCandidate(@RequestBody User user){
         if (Objects.isNull(user)){
             throw new BusinessException("要成为候选者的用户不能为空！");
@@ -61,6 +66,7 @@ public class CandidateController {
 
     @PutMapping("/update")
     @TokenRequired
+    @Operation(summary = "修改候选人")
     public CommonResp updateCandidate(@RequestBody Candidate candidate){
         if(Objects.isNull(candidate)){
             throw new BusinessException("要修改的候选者不能为空！");

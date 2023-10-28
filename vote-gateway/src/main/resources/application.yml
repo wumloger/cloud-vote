@@ -1,0 +1,22 @@
+#server:
+#  port: 8000
+#spring:
+#  application:
+#    name: gateway-server
+#  cloud:
+#    nacos:
+#      server-addr: localhost:8848
+#    gateway:
+#      routes:
+#        - id: user-server
+#          uri: lb://user-server
+#          predicates:
+#            - Path=/user/**
+#        - id: vote-server
+#          uri: lb://vote-server
+#          predicates:
+#            - Path=/vote/**
+#        - id: candidate-server
+#          uri: lb://candidate-server
+#          predicates:
+#            - Path=/candidate/**

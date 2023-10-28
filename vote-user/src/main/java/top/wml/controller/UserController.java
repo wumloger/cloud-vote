@@ -1,5 +1,6 @@
 package top.wml.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 import top.wml.annotation.TokenRequired;
@@ -20,18 +21,22 @@ public class UserController {
 
     @GetMapping("/list")
     @TokenRequired
+    @Operation(summary = "获取用户列表")
     public CommonResp getUsers(){
         List<User> list = userService.list();
         return CommonResp.success(list);
     }
 
     @PostMapping("/login")
+    @Operation(summary = "用户登录")
     public CommonResp login(@RequestBody User user){
         String token = userService.login(user);
         return CommonResp.success(token);
     }
 
-    @PostMapping("/be/{id}")
+    @PostMapping("/beCandidate/{id}")
+    @TokenRequired
+    @Operation(summary = "用户成为候选者")
     public CommonResp beCandidate(@PathVariable Integer id){
         User byId = userService.getById(id);
         if(Objects.isNull(byId)){
@@ -42,6 +47,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
+    @Operation(summary = "用户注册")
     public CommonResp register(@RequestBody User user){
         boolean register = userService.register(user);
         return CommonResp.success(register);

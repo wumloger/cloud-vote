@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="vote-core" />
+        <module name="vote-gateway" />
         <module name="vote-user" />
         <module name="vote-common" />
         <module name="vote-candidate" />
@@ -19,6 +20,7 @@
       <module name="vote-candidate" options="-parameters" />
       <module name="vote-common" options="-parameters" />
       <module name="vote-core" options="-parameters" />
+      <module name="vote-gateway" options="-parameters" />
       <module name="vote-user" options="-parameters" />
     </option>
   </component>

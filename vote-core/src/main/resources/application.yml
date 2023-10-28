@@ -1,16 +1,32 @@
-server:
-  port: 8003
-spring:
-  application:
-    name: security-server
-  datasource:
-    url: jdbc:mysql://47.113.151.162:3306/vote_center?useSSL=FALSE&serverTimezone=UTC
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  cloud:
-    nacos:
-      server-addr: localhost:8848
-logging:
-  level:
-    com.example.bdatabaserole.mapper: debug
+#server:
+#  port: 8003
+#spring:
+#  application:
+#    name: vote-server
+#  datasource:
+#    url: jdbc:mysql://47.113.151.162:3306/vote_center?useSSL=FALSE&serverTimezone=UTC
+#    username: root
+#    password: 123456
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  cloud:
+#    nacos:
+#      server-addr: localhost:8848
+#logging:
+#  level:
+#    com.example.bdatabaserole.mapper: debug
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    tags-sorter: alpha
+#    operations-sorter: alpha
+#  api-docs:
+#    path: /v3/api-docs
+#  group-configs:
+#    - group: 'default'
+#      paths-to-match: '/**'
+#      packages-to-scan: top.wml.controller
+## knife4j的增强配置，不需要增强可以不配
+#knife4j:
+#  enable: true
+#  setting:
+#    language: zh_cn

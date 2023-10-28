@@ -8,6 +8,7 @@
         <module>vote-common</module>
         <module>vote-candidate</module>
         <module>vote-core</module>
+        <module>vote-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -81,6 +82,11 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>3.5.3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>4.1.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
