@@ -74,6 +74,9 @@ public class VoteController {
         Vote vote = userVote.get(0);
         //发远程请求拿候选人信息
         CommonResp resp = candidateService.getCandidate(candidateId);
+        if(resp.getData() == null){
+            throw new BusinessException("没有该候选人");
+        }
         Candidate candidate = new ObjectMapper().convertValue(resp.getData(), Candidate.class);
         System.out.println(candidate.toString());
         //投票
