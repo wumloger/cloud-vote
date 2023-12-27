@@ -53,7 +53,8 @@
             }
           }
         },
-        "x-run-in-apifox": "https://www.apifox.cn/web/project/3486806/apis/api-120031126-run"
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-120031126-run",
+        "security": []
       }
     },
     "/localhost:8000/user/login": {
@@ -105,7 +106,8 @@
             }
           }
         },
-        "x-run-in-apifox": "https://www.apifox.cn/web/project/3486806/apis/api-120031479-run"
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-120031479-run",
+        "security": []
       }
     },
     "/localhost:8000/user/beCandidate/1": {
@@ -144,7 +146,8 @@
             }
           }
         },
-        "x-run-in-apifox": "https://www.apifox.cn/web/project/3486806/apis/api-120043103-run"
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-120043103-run",
+        "security": []
       }
     },
     "/localhost:8000/candidate/list": {
@@ -183,7 +186,8 @@
             }
           }
         },
-        "x-run-in-apifox": "https://www.apifox.cn/web/project/3486806/apis/api-120329726-run"
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-120329726-run",
+        "security": []
       }
     },
     "/localhost:8000/vote/add": {
@@ -222,7 +226,8 @@
             }
           }
         },
-        "x-run-in-apifox": "https://www.apifox.cn/web/project/3486806/apis/api-120330370-run"
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-120330370-run",
+        "security": []
       }
     },
     "/localhost:8000/vote/1": {
@@ -261,7 +266,8 @@
             }
           }
         },
-        "x-run-in-apifox": "https://www.apifox.cn/web/project/3486806/apis/api-120330470-run"
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-120330470-run",
+        "security": []
       }
     },
     "/localhost:8000/user/register": {
@@ -300,17 +306,138 @@
             }
           }
         },
-        "x-run-in-apifox": "https://www.apifox.cn/web/project/3486806/apis/api-120334403-run"
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-120334403-run",
+        "security": []
+      }
+    },
+    "/localhost:8000/user/getUserInfo": {
+      "get": {
+        "summary": "获取用户信息",
+        "x-apifox-folder": "User模块",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "User模块"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "1",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2OTk0NTA0MDYsInBob25lIjoiMTIzNDU2IiwiaWQiOjEsImV4cCI6MTY5OTYyMzIwNiwiaWF0IjoxNjk5NDUwNDA2fQ.40sJCpGVAJVN4tESjwrHa991Y3mRnJK3rShHL2um3yY",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-136943213-run",
+        "security": []
+      }
+    },
+    "/localhost:8000/user/updateUser": {
+      "post": {
+        "summary": "跟新用户信息",
+        "x-apifox-folder": "User模块",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "User模块"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2OTk0NTA0MDYsInBob25lIjoiMTIzNDU2IiwiaWQiOjEsImV4cCI6MTY5OTYyMzIwNiwiaWF0IjoxNjk5NDUwNDA2fQ.40sJCpGVAJVN4tESjwrHa991Y3mRnJK3rShHL2um3yY",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "x-apifox-orders": [
+                  "id",
+                  "username",
+                  "email",
+                  "password"
+                ],
+                "required": [
+                  "id",
+                  "password"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/3486806/apis/api-136944095-run",
+        "security": []
       }
     }
   },
   "components": {
-    "schemas": {}
+    "schemas": {},
+    "securitySchemes": {}
   },
-  "servers": [
-    {
-      "url": "http://",
-      "description": "开发环境"
-    }
-  ]
+  "servers": []
 }
