@@ -52,4 +52,18 @@ public class UserController {
         boolean register = userService.register(user);
         return CommonResp.success(register);
     }
+
+    @GetMapping("/getUserInfo")
+    @Operation(summary = "获取用户信息")
+    public CommonResp getUserById(@RequestParam Integer id){
+        User byId = userService.getById(id);
+        return CommonResp.success(byId);
+    }
+
+    @PostMapping("/updateUser")
+    @Operation(summary = "更新用户信息")
+    public CommonResp updateUser(@RequestBody User user){
+        boolean b = userService.updateById(user);
+        return b? CommonResp.success(b):CommonResp.fail("该用户不存在！");
+    }
 }
